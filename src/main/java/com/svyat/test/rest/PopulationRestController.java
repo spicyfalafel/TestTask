@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
+import java.math.BigInteger;
 import java.util.List;
 
 @RestController
@@ -19,7 +20,7 @@ public class PopulationRestController {
     private PopulationService populationService;
 
     @GetMapping("{id}")
-    public ResponseEntity<Population> getVirus(@PathVariable("id") Integer id){
+    public ResponseEntity<Population> getVirus(@PathVariable("id") BigInteger id){
         if( id == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -61,7 +62,7 @@ public class PopulationRestController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Population> deleteVirus(@PathVariable("id") Integer id){
+    public ResponseEntity<Population> deleteVirus(@PathVariable("id") BigInteger id){
         Population population = this.populationService.getById(id);
         if(population == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

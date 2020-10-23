@@ -50,7 +50,7 @@ public class Virus implements Serializable {
 
 
     @ManyToOne
-    @JoinColumn(name="population_id", nullable=false)
-    private Population population;
+    @JoinColumn(name="id", nullable=false)
+    private Disease disease;
 
 }

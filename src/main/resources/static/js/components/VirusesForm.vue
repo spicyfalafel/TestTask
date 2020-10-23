@@ -1,5 +1,4 @@
 <script>
-//maybe this is strange way to allow integer value only
 
 
 export default {

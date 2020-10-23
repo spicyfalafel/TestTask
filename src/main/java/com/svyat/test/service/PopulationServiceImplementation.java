@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.util.List;
 
 @Slf4j
@@ -18,7 +19,7 @@ public class PopulationServiceImplementation implements PopulationService{
     PopulationRepository populationRepository;
 
     @Override
-    public Population getById(Integer id) {
+    public Population getById(BigInteger id) {
         log.info("population getById():" + id);
         return populationRepository.getOne(id);
     }
@@ -36,7 +37,7 @@ public class PopulationServiceImplementation implements PopulationService{
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(BigInteger id) {
         populationRepository.deleteById(id);
         log.info("population delete():" + id);
     }
